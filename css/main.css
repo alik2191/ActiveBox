@@ -1,0 +1,403 @@
+body{
+	margin: 0;
+	font-family: 'Raleway', sans-serif;
+	background-color: #fff;
+	font-size: 14px;
+	color: #6c7279;
+	-webkit-font-smoothing:subpixel-antialiased;
+}
+
+*,
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+h1, h2, h3, h4{
+	margin: 0;
+}
+
+.container{
+	width: 100%;
+	max-width: 1200px;
+	/* по центру*/
+	margin: 0 auto;
+	padding: 0 15px;
+}
+p {
+	margin: 0 0 10px 0;
+}
+
+.header{
+	/*С помощью этого делаем блок поверх 
+	остальных чтобы вставить задний фон*/
+	width: 100%;
+	height: 100px;
+	position: absolute;
+	top:0;
+	left: 0;
+	z-index: 1000;
+}
+
+.header__info{
+	display: flex;
+	justify-content: space-between;
+	padding: 37px 0;
+	/*вырочнять  контент меню по центур*/
+	-ms-align-items: center;
+	align-items: center;
+
+	border-bottom: 1px solid #515369;
+}
+
+.nav{
+	display: flex;
+	font-size: 13px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.nav__link{
+	margin-left: 50px;
+	color: #fff;
+	text-decoration: none;
+	/*Прозрачность текста*/
+	opacity: 0.75;
+/*плавный переход цвета при наведении курсора*/
+	transition: opacity 0.2s linear;
+}
+
+.nav__link:first-child{
+	/*удаляю отступслева от первого пунтка меня*/
+ margin-left: 0;
+}
+.nav__link:hover{
+	/*меняем прозрачность при наведнии на стандартную*/
+	opacity: 1;
+	/** подчеркивание при наведении
+	text-decoration: underline;*/
+}
+
+.intro {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	/*каждыной новый элемент с новой строки*/
+	-webkit-flex-direction: column;
+	-moz-flex-direction: column;
+	-ms-flex-direction: column;
+	-o-flex-direction: column;
+	flex-direction: column;
+
+
+	justify-content: center;
+	height: 750px;
+/*если картинка не прогркзилась то цвет фона*/
+	background:#31344e
+	url(..//img/bcgr.jpg) center no-repeat;
+	padding-top: 100px;
+}
+
+.intro__inner{
+	width: 100%;
+	max-width: 970px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.intro__title{
+	margin: 0 0 30px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 64px;
+	color: #fff;
+	line-height: 1.1;
+	font-weight: 700;
+	text-transform: uppercase;
+	
+}
+
+.intro__subtitle{
+	margin-bottom: 60px;
+
+	font-size: 22px;
+	color: #fff;
+	line-height: 1.5;
+	font-weight: 400;
+
+}
+/*BUTTON
+================================*/
+.btn{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 13px;
+	padding: 14px 40px;
+	color: #fff;
+
+	border-radius: 3px;
+
+	font-family: inherit;
+	text-transform: uppercase;
+	font-weight: 600;
+	text-decoration: none;
+
+	transition: background .2s linear;
+}
+.btn--red{
+ 	background: #e84545;
+
+}
+
+.btn--red:hover{
+	background: #dd3434;
+
+}
+
+/*FEATURES
+================================*/
+.features{
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	margin: 100px 0;
+	/*перенос обьектов если не помещяюься 
+	 в строку зависит от 33,3333%*/
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+
+}
+
+.features__item{
+	width: 33.33333%;
+	text-align: center;
+	padding: 0 20px;
+	margin: 25px 0;	
+
+}
+.features__icon{
+	margin-bottom: 25px;
+}
+.features__title{
+	font-size: 14px;
+	color: #2d3033;
+	font-weight: 700;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+.features__text{
+	color: #6c7279;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+
+/*WORKS
+=====================================*/
+.works{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.works__item{
+	width: 25%;
+	height: 350px;
+	position: relative;
+	/*скрываем все что не влазит в контейнер*/
+	overflow: hidden;
+	border-bottom: 1px solid #fff;
+	border-right: 1px solid #fff;
+}
+/*При наведении курсовра на картинку 
+показывает скртый текст*/
+.works__item:hover .works__content{
+opacity: 1;
+}
+
+.works__photo{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	z-index: 1;
+
+	transform: translate3d(-50%, -50%, 0);
+
+}
+.works__content{
+	display: flex;
+	/*каждый новый элемент с новой строки*/
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+
+background-color: rgba(232, 69, 69, .9);
+
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+	opacity: 0;
+
+	transition: opacity .2s linear;
+}
+
+.works__title{
+	margin-bottom: 5px;
+	font-size: 14px;
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.works__text{
+	font-size: 14px;
+	color: #fff;
+}
+
+/*TEAM
+======================================*/
+.team{
+	margin: 100px 0 70px;
+}
+.team__inner{
+	display: flex;
+	/*чтобы контент которй не 
+	вмещается перносился на  новую строку*/
+	flex-wrap: wrap;
+	margin: 0 -15px;
+
+}
+
+.team__item{
+	width: 25%;
+	padding: 0 15px;
+	margin-bottom: 30px;
+
+}
+
+.team__photo{
+	margin-bottom: 15px;
+
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+.team__name{
+	margin-bottom: 8px;
+
+	font-size: 22px;
+	color: #2d3033;
+}
+.team__prof{
+	margin-bottom: 15px;
+
+	font-size: 13px;
+	text-transform: uppercase;
+	color: #e84545;
+}
+.team__text{
+	margin-bottom: 20px;
+	font-size: 13px;
+	color: #6c7279;
+	line-height: 1.5;
+
+}
+/*SOCIAL+
+==================================*/
+.social{
+	
+	display: flex;
+}
+
+.social__item{
+	display: flex;
+	margin-right: 4px;
+	width: 40px;
+	height: 40px;
+	background-color: #fff;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
+
+	transition: background .2s linear;
+}
+/*Задний фон на иконке*/
+/*.social__item:hover{
+	background-color: #e8ecee;
+}*/
+.social__item:hover .social__icon{
+	fill: #e84545;
+}
+
+.social__icon{
+	display: block;
+	fill: #c6cacc;
+	transition: fill .1s linear;
+	margin-right: 10px;
+	height: 20px;
+}
+
+/*REVIEWS
+=========================================*/
+.reviews{
+	overflow: hidden;
+	background-color: #53354a;
+
+}
+
+.reviews_item{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.reviews_photo{
+	/*Выравниваем фото слева*/
+	width: 50%;
+	height: 500px;
+	position: relative;
+}
+
+.reviews__img{
+	position: absolute;
+	top: 50%;
+	right: 0;
+	z-index: 1;
+/*внезависимости от размера картинка
+ всегда будет по центру*/
+	transform: translateY(-50%);
+
+}
+.reviews_content{
+	
+	display: flex;
+	/* размещаем контент по центу по середине*/
+	flex-direction: column;
+	justify-content: center;
+	width: 50%;
+	padding-left: 80px;	
+
+
+}
+
+.reviews__text{
+	margin-bottom: 25px;
+	font-size: 36px;
+	font-style: italic;
+	line-height: 1.2;
+	color: #fff;
+}
+
+.reviews__author{
+	font-size: 13px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+
+}
