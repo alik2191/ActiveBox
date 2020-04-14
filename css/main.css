@@ -153,6 +153,20 @@ p {
 	background: #dd3434;
 
 }
+.topbutton{
+	width:100px;
+	background:#e84545;
+	text-align:center;
+	padding:10px;
+	position:fixed;
+	bottom:50px;
+	right:50px;
+	cursor:pointer;
+	color:rgb(243, 243, 243);
+	font-family:verdana;
+	font-size:12px;
+	border-radius: 2px;
+	}
 
 /*FEATURES
 ================================*/
@@ -522,3 +536,4 @@ background-color: rgba(232, 69, 69, .9);
 .copyright-text span{
 	color: white;
 }
+
